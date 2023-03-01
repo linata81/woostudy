@@ -1,14 +1,28 @@
 <?php
 
-/* подключаем поддержку woocommerce */
+
 function woostudy_setup() {
-  add_theme_support( 'woocommerce' );
+  load_theme_textdomain('woostudy', get_template_directory().'/languages'); /* 1-название текстового домена, 2 -где находятся переводы */
+  add_theme_support('title-tag');      /* подключаем поддержку title */
+  add_theme_support('post-thumbnail'); /* подключаем поддержку миниатюр */
+  add_theme_support( 'woocommerce' ); /* подключаем поддержку woocommerce */
+  
+  /* подключаем меню(их будет несколько) */
+  register_nav_menus([
+    /* при подключении этого главного меню воспользуемся функциями локализации, чтобы в зависимости от языка меню было переведено*/
+    'menu-1'=> __('Top Menu','woostudy'), /* 1арг -текст, кот нужно перевести, 2арг - текстовый домен */
+  ]);  
 }
 add_action( 'after_setup_theme', 'woostudy_setup' );
 
+//делаем, чтобы сторонние шрифты были загружены заранее
+add_action('wp_head', function() {
+  echo '<link rel="preconnect" href="https://fonts.gstatic.com">';
+}, 5);
+
 /* подключаем стили  и скрипты */
 function woostudy_scripts(){
-  wp_enqueue_style('woostudy-google-fonts', 'https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+  wp_enqueue_style('woostudy-google-fonts', 'https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap', [], null);
   wp_enqueue_style('woostudy-fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css');
   wp_enqueue_style('woostudy-animate', get_template_directory_uri().'/assets/lib/animate/animate.min.css');
   wp_enqueue_style('woostudy-owlcarousel', get_template_directory_uri().'/assets/lib/owlcarousel/assets/owl.carousel.min.css');
