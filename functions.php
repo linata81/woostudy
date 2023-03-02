@@ -12,6 +12,7 @@ function woostudy_setup() {
     /* при подключении этого главного меню воспользуемся функциями локализации, чтобы в зависимости от языка меню было переведено*/
     'menu-1'=> __('Top Menu','woostudy'), /* 1арг -текст, кот нужно перевести, 2арг - текстовый домен */
     'menu-2'=> __('Categories Menu','woostudy'),
+    'menu-3'=> __('Navbar Menu','woostudy'),
   ]);  
 }
 add_action( 'after_setup_theme', 'woostudy_setup' );
@@ -41,3 +42,9 @@ add_action('wp_enqueue_scripts', 'woostudy_scripts');
 /* подключаем файлы из папки inc */
 require_once get_template_directory() . '/inc/woocommerce-hooks.php';
 require_once get_template_directory() . '/inc/class-woostudy-menu-categories.php';
+require_once get_template_directory() . '/inc/class-woostudy-menu-navbar.php';
+
+/* функция для удобной распечатки */
+function woostudy_debug($data) {
+  echo '<pre>' . print_r($data, 1) . '</pre>'; /* 1/true - чтобы перехватить вывод */
+}
