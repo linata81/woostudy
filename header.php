@@ -102,7 +102,13 @@
             </a>
             <nav class="collapse position-absolute navbar navbar-vertical navbar-light align-items-start p-0 bg-light" id="navbar-vertical" style="width: calc(100% - 30px); z-index: 999;">
                 <div class="navbar-nav w-100">
-                    <div class="nav-item dropdown dropright">
+                    <?php wp_nav_menu([
+                      'theme_location' => 'menu-2',
+                      'container' => false,
+                      'items_wrap' => '%3$s', /* убираем обертку ul из меню (но li останутся) */
+                      'walker' => new Woostudy_Menu_Categories(), /* переопределим класс, который строит наше меню */
+                    ]); ?>
+                    <!-- <div class="nav-item dropdown dropright">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Dresses <i class="fa fa-angle-right float-right mt-1"></i></a>
                         <div class="dropdown-menu position-absolute rounded-0 border-0 m-0">
                             <a href="" class="dropdown-item">Men's Dresses</a>
@@ -118,7 +124,7 @@
                     <a href="" class="nav-item nav-link">Jumpsuits</a>
                     <a href="" class="nav-item nav-link">Blazers</a>
                     <a href="" class="nav-item nav-link">Jackets</a>
-                    <a href="" class="nav-item nav-link">Shoes</a>
+                    <a href="" class="nav-item nav-link">Shoes</a> -->
                 </div>
             </nav>
         </div>
