@@ -10,3 +10,16 @@
 .menu-1 li a{
   color: #6C757D; 
 }
+
+.woocommerce {
+  width: 100%;
+}
+
+.category-list img{
+  max-width: 100%;
+  height: auto;
+}
+
+.category-list a{
+  text-decoration: none;
+}
