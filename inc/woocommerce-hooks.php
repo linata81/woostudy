@@ -28,3 +28,10 @@ add_action('woocommerce_shop_loop_item_title', function() {
 
 // Рейтинг товара в карточке товара
 remove_action('woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5);
+
+//Обновление мини-корзины(счетчика)
+add_filter('woocommerce_add_to_cart_fragments', function( $fragments ) {
+  //$fragments['.mini-cart-cnt'] = '<span class="badge text-dark border border-dark rounded-circle mini-cart-cnt">'. count(WC()->cart->get_cart()) .'</span>';
+  $fragments['.mini-cart-cnt'] = '<span class="badge text-dark border border-dark rounded-circle mini-cart-cnt">'. WC()->cart->get_cart_contents_count() .'</span>';
+  return $fragments;
+});

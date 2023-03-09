@@ -147,3 +147,7 @@ span.price del {
   margin: 0 auto .5407911001em;
 }
 /* Star rating */
+
+.mini-cart-cnt {
+  padding-bottom: 2px;
+}
