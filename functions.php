@@ -43,6 +43,7 @@ add_action('wp_enqueue_scripts', 'woostudy_scripts');
 require_once get_template_directory() . '/inc/woocommerce-hooks.php';
 require_once get_template_directory() . '/inc/class-woostudy-menu-categories.php';
 require_once get_template_directory() . '/inc/class-woostudy-menu-navbar.php';
+require_once get_template_directory() . '/inc/cpt.php';
 
 /* функция для удобной распечатки */
 function woostudy_debug($data) {
