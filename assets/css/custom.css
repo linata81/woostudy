@@ -151,3 +151,24 @@ span.price del {
 .mini-cart-cnt {
   padding-bottom: 2px;
 }
+
+.aws-container .aws-search-form {
+  height: 38px;
+}
+
+.aws-container .aws-search-form .aws-form-btn {
+  background: #fff;
+  border: 1px solid #ced4da;
+}
+
+.aws-container .aws-search-form .aws-form-btn:hover {
+  background: #ededed;
+}
+
+.aws-container .aws-search-form .aws-form-btn:hover > span {
+  color: #555;
+}
+
+.aws-container .aws-search-form .aws-search-btn_icon {
+  color: #FFD333;
+}
