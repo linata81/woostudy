@@ -35,3 +35,16 @@ add_filter('woocommerce_add_to_cart_fragments', function( $fragments ) {
   $fragments['.mini-cart-cnt'] = '<span class="badge text-dark border border-dark rounded-circle mini-cart-cnt">'. WC()->cart->get_cart_contents_count() .'</span>';
   return $fragments;
 });
+
+//Хлебные крошки
+remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20);
+add_filter( 'woocommerce_breadcrumb_defaults', function() {
+	return array(
+		'delimiter'   => '&nbsp;/&nbsp;', //разделитель
+		'wrap_before' => '<nav class="breadcrumb bg-light mb-30">', //обертка
+		'wrap_after'  => '</nav>',
+		'before'      => '',
+		'after'       => '',
+		'home'        => __( 'Home', 'woostudy' ),
+	);
+} );

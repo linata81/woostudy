@@ -172,3 +172,11 @@ span.price del {
 .aws-container .aws-search-form .aws-search-btn_icon {
   color: #FFD333;
 }
+
+nav.breadcrumb {
+  color: #6c757d;
+}
+
+nav.breadcrumb a{
+  color: #3D464D;
+}
