@@ -17,6 +17,18 @@ function woostudy_setup() {
 }
 add_action( 'after_setup_theme', 'woostudy_setup' );
 
+// сайдбар
+function woostudy_widgets_init() {
+  register_sidebar([
+      'name' => esc_html__('Sidebar', 'woostudy'),
+      'id' => 'sidebar-1',
+      'description' => esc_html__('Add widgets here.', 'woostudy'),
+      'before_widget' => '<section id="%1$s" class="widget %2$s">',
+      'after_widget' => '</section>',
+  ]);
+}
+add_action('widgets_init', 'woostudy_widgets_init');
+
 //делаем, чтобы сторонние шрифты были загружены заранее
 add_action('wp_head', function() {
   echo '<link rel="preconnect" href="https://fonts.gstatic.com">';

@@ -1,7 +1,15 @@
+<!-- если такой сайдбар не активен, то завершаем работу -->
+<?php
+if(!is_active_sidebar('sidebar-1')) {
+    return;
+}
+?>
+
 <!-- Shop Sidebar Start -->
-<div class="col-lg-3 col-md-4">
+<div class="col-lg-3 col-md-4 woostudy-sidebar">
+    <?php dynamic_sidebar('sidebar-1'); ?>
     <!-- Price Start -->
-    <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Filter by price</span></h5>
+    <!-- <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Filter by price</span></h5>
     <div class="bg-light p-4 mb-30">
         <form>
             <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
@@ -35,11 +43,11 @@
                 <span class="badge border font-weight-normal">168</span>
             </div>
         </form>
-    </div>
+    </div> -->
     <!-- Price End -->
     
     <!-- Color Start -->
-    <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Filter by color</span></h5>
+    <!-- <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Filter by color</span></h5>
     <div class="bg-light p-4 mb-30">
         <form>
             <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
@@ -73,11 +81,11 @@
                 <span class="badge border font-weight-normal">168</span>
             </div>
         </form>
-    </div>
+    </div> -->
     <!-- Color End -->
 
     <!-- Size Start -->
-    <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Filter by size</span></h5>
+    <!-- <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Filter by size</span></h5>
     <div class="bg-light p-4 mb-30">
         <form>
             <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
@@ -111,7 +119,7 @@
                 <span class="badge border font-weight-normal">168</span>
             </div>
         </form>
-    </div>
+    </div> -->
     <!-- Size End -->
 </div>
 <!-- Shop Sidebar End -->

@@ -48,3 +48,6 @@ add_filter( 'woocommerce_breadcrumb_defaults', function() {
 		'home'        => __( 'Home', 'woostudy' ),
 	);
 } );
+
+//Уведомления на архивной странице магазина
+remove_action('woocommerce_before_shop_loop', 'woocommerce_output_all_notices', 10);

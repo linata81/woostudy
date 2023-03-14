@@ -32,10 +32,15 @@
 		
 		<!--вывод товара----->
 		<?php
-			if ( woocommerce_product_loop() ) {
+			if ( woocommerce_product_loop() ) { ?>
 
-				do_action( 'woocommerce_before_shop_loop' );
-
+				<div class="col-12">
+					<div class="d-flex align-items-center justify-content-between mb-4">
+						<?php do_action( 'woocommerce_before_shop_loop' ); ?>						
+					</div>
+				</div>
+				
+				<?php
 				woocommerce_product_loop_start();
 
 				if ( wc_get_loop_prop( 'total' ) ) {
@@ -116,6 +121,7 @@ do_action( 'woocommerce_before_main_content' );    //начало обертки
 	 */
 	do_action( 'woocommerce_archive_description' );
 	?>
+	<?php woocommerce_output_all_notices(); ?>
 </header>
 <?php
 if ( woocommerce_product_loop() ) {
