@@ -10,14 +10,12 @@
 </div>
 <!-- Breadcrumb End -->
 
-<!-- Shop Start -->
-<div class="container-fluid">
-	<div class="row px-xl-5">
-		
-	<?php do_action( 'woocommerce_sidebar' ); ?>
-	
-	<?php do_action( 'woocommerce_before_main_content' ); ?>
-		
+<?php do_action( 'woocommerce_before_main_content' ); ?>		
+<?php do_action( 'woocommerce_sidebar' ); ?>
+
+<!-- Shop Product Start -->
+<div class="col-lg-9 col-md-8">
+	<div class="row pb-3">
 		<div class="col-12">
 			<header class="woocommerce-products-header">
 				<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
@@ -26,10 +24,10 @@
 					</h1>
 				<?php endif; ?>
 
+				<?php	woocommerce_output_all_notices();?>
 				<?php	do_action( 'woocommerce_archive_description' );?>
 			</header>
 		</div>
-		
 		<!--вывод товара----->
 		<?php
 			if ( woocommerce_product_loop() ) { ?>
@@ -61,14 +59,10 @@
 				do_action( 'woocommerce_no_products_found' );
 			}
 		?>
+	</div>
+</div>
 
-	
-	<?php do_action( 'woocommerce_after_main_content' ); ?>
-			
-	</div><!-- ./row px-xl-5 -->
-</div><!-- ./container-fluid-->
-
-
+<?php do_action( 'woocommerce_after_main_content' ); ?>
 
 <?php get_footer( 'shop' );  ?>
 

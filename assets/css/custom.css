@@ -228,3 +228,20 @@ nav.breadcrumb a{
 .woostudy-sidebar .wc-block-attribute-filter label {
   margin-left: 10px;
 }
+
+.woocommerce-message {
+  border-color: #ffd333;
+  padding: 1rem;
+  mix-blend-mode: 1rem;
+  color: #000;
+}
+
+.woocommerce-message .button{
+  float:right;
+  color: #000;
+  text-decoration: underline;
+}
+
+.woocommerce-message .button:hover{
+  text-decoration: none;
+}
