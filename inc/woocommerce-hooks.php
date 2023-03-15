@@ -51,3 +51,10 @@ add_filter( 'woocommerce_breadcrumb_defaults', function() {
 
 //Уведомления на архивной странице магазина
 remove_action('woocommerce_before_shop_loop', 'woocommerce_output_all_notices', 10);
+
+//Удаляем сайтбар на странице продукта
+add_action('template_redirect', function() {
+  if(is_product()) {
+    remove_action('woocommerce_sidebar', 'woocommerce_get_sidebar', 10);
+  }  
+});
