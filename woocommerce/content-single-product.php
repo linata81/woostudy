@@ -22,8 +22,19 @@ global $product;
 	<div class="row">
 		<div class="col-lg-5 mb-30">
 			<!-- slider -->
+			<?php
+			/**
+			 * Hook: woocommerce_before_single_product_summary.
+			 *
+			 * @hooked woocommerce_show_product_sale_flash - 10 (является ли товар распродажей)
+			 * @hooked woocommerce_show_product_images - 20 (выводит галерею)
+			 */
+			do_action( 'woocommerce_before_single_product_summary' );
+			?>
+			
+			
 			<!-- возможный вариант, но тут картинка не меняется у вариативных товаров -->
-			<div id="product-carousel" class="carousel slide" data-ride="carousel">
+			<!-- <div id="product-carousel" class="carousel slide" data-ride="carousel">
 					<div class="carousel-inner bg-light">
 						
 						<?php
@@ -57,13 +68,33 @@ global $product;
 								<i class="fa fa-2x fa-angle-right text-dark"></i>
 						</a>
 					<?php endif; ?>
-			</div>
+			</div> -->	
+			
 		</div>
 		
 		<div class="col-lg-7 h-auto mb-30">
-			<!-- content -->
+			<div class="h-100 bg-light p-30 product-card-content">
+				<?php woocommerce_show_product_sale_flash(); ?>
+				<?php
+					/**
+					 * Hook: woocommerce_single_product_summary.
+					 *
+					 * @hooked woocommerce_template_single_title - 5
+					 * @hooked woocommerce_template_single_rating - 10
+					 * @hooked woocommerce_template_single_price - 10
+					 * @hooked woocommerce_template_single_excerpt - 20
+					 * @hooked woocommerce_template_single_add_to_cart - 30
+					 * @hooked woocommerce_template_single_meta - 40
+					 * @hooked woocommerce_template_single_sharing - 50
+					 * @hooked WC_Structured_Data::generate_product_data() - 60
+					*/
+					do_action( 'woocommerce_single_product_summary' );
+				?>
+				<!-- content -->
+			</div>
 		</div>
-	</div>
+		
+	</div><!-- ./row -->
 	
 </div>
 
@@ -78,20 +109,7 @@ global $product;
 
 <?php
 return;
-
-
-
 ?>
-
-	<?php
-	/**
-	 * Hook: woocommerce_before_single_product_summary.
-	 *
-	 * @hooked woocommerce_show_product_sale_flash - 10 (является ли товар распродажей)
-	 * @hooked woocommerce_show_product_images - 20 (выводит галерею)
-	 */
-	do_action( 'woocommerce_before_single_product_summary' );
-	?>
 
 	<div class="summary entry-summary">
 		<?php

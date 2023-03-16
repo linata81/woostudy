@@ -6,6 +6,9 @@ function woostudy_setup() {
   add_theme_support('title-tag');      /* подключаем поддержку title */
   add_theme_support('post-thumbnail'); /* подключаем поддержку миниатюр */
   add_theme_support( 'woocommerce' ); /* подключаем поддержку woocommerce */
+  add_theme_support( 'wc-product-gallery-zoom' ); /* подключаем поддержку zoom */
+  add_theme_support( 'wc-product-gallery-lightbox' );/* просмотр фото на темном экране */
+  add_theme_support( 'wc-product-gallery-slider' );  /* подключаем поддержку слайдера */
   
   /* подключаем меню(их будет несколько) */
   register_nav_menus([

@@ -235,6 +235,7 @@ nav.breadcrumb a{
   padding: 1rem;
   mix-blend-mode: 1rem;
   color: #000;
+  background-color: #ffd333;
 }
 
 .woocommerce-message .button{
@@ -246,3 +247,76 @@ nav.breadcrumb a{
 .woocommerce-message .button:hover{
   text-decoration: none;
 }
+
+.woocommerce-product-gallery {
+  position: relative;
+}
+
+.woocommerce-product-gallery__trigger {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  z-index: 99;
+  display: block;
+  height: 2em;
+  width: 2em;
+}
+
+.woocommerce-product-gallery .flex-viewport {
+  margin-bottom: 1.5rem;
+}
+
+.woocommerce-product-gallery__image a,
+.woocommerce-product-gallery__image img {
+  width: 100%;
+}
+
+
+.woocommerce-product-gallery img {
+  max-width: 100%;
+  height: auto;
+}
+
+.woocommerce-product-gallery .flex-control-thumbs {
+  display: table;
+  padding-left: 0;
+}
+
+.woocommerce-product-gallery .flex-control-thumbs li {
+  width: 15%;
+  float: left;
+  margin-right: 5%;
+  list-style: none;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+}
+
+.product-card-content .onsale {
+  border: 1px solid #ffd333;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  display: inline-block;
+  border-radius: 3px;
+}
+
+h1.product_title {
+  font-size: 1.75rem;
+}
+
+.product_meta > span {
+  display: block;
+}
+
+.product-card.product-type-simple input::-webkit-outer-spin-button,
+.product-card.product-type-simple input::-webkit-inner-spin-button,
+.product-card.product-type-variable input::-webkit-outer-spin-button,
+.product-card.product-type-variable input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.product-card.product-type-simple input[type=number],
+.product-card.product-type-variable input[type=number] {
+  -moz-appearance: textfield;
+}
+

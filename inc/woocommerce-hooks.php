@@ -58,3 +58,6 @@ add_action('template_redirect', function() {
     remove_action('woocommerce_sidebar', 'woocommerce_get_sidebar', 10);
   }  
 });
+
+//Отключаем и переносим лэйбел "распродажа" в другое место
+remove_action('woocommerce_before_single_product_summary', 'woocommerce_show_product_sale_flash', 10);

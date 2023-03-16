@@ -237,3 +237,20 @@ woocommerce/cart/mini-cart.php Создаем в теме в woocommerce пап�
     $product->get_gallery_image_ids() возвращает массив id галереи товара
     <?php foreach($product_img_ids as $product_img_id): ?>
 		<?php endforeach; ?>
+    
+    У wc в поддержке темы можно включить слайдер  https://woocommerce.com/document/woocommerce-theme-developer-handbook/
+    add_theme_support( 'wc-product-gallery-zoom' );
+    add_theme_support( 'wc-product-gallery-lightbox' );
+    add_theme_support( 'wc-product-gallery-slider' );
+    Их надо объявить в function.php
+    И придется стилями красиво оформить.
+    
+    За количество товара отвечает свой шаблон:
+    wp-content/plugins/woocommerce/templates/global/quantity-input.php
+    
+    За добавить в корзину шаблон:
+    wp-content/plugins/woocommerce/templates/single-product/add-to-cart и для каждого типа товара свой файл
+    Cоздаем в нашей папке woocommerce папку single-product и целиком копируем туда всю папку add-to-cart 
+    
+    В шаблон вокруг инпута добавляем кнопки +/- и в main.js немного поменяем функцию, добавив в нее отмену стандартного поведения кнопок
+    функция Product Quantity 
