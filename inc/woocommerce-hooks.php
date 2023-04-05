@@ -61,3 +61,6 @@ add_action('template_redirect', function() {
 
 //Отключаем и переносим лэйбел "распродажа" в другое место
 remove_action('woocommerce_before_single_product_summary', 'woocommerce_show_product_sale_flash', 10);
+
+//Отключаем вывод связаных товаров в карточке товара
+remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);

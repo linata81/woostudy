@@ -336,3 +336,22 @@ function ui_display_wc_variation() {
 ++++++++++++++++++
 В сгруппированном товаре выводится табличка с инпутами чтобы вводить количество товара.
 Шаблон карточки товара - grouped.php
+
+++++++++++++++++++++++++++++++++++
+В карточке товаров табы с характеристиками, отзывами
+====================================================
+шаблон карточки товара - content-single-product.php
+Вкладки реализует хук 'woocommerce_after_single_product_summary'
+На нее навешаны три функции:
+1) woocommerce_output_product_data_tabs  - выводит табы
+2) woocommerce_upsell_display - выводит апсел(сопутствующие товары)
+3) woocommerce_output_related_products - выводит  связаные товары (связаные по меткам или категориям и тп)
+related_products выводится в том случае, если нет апсейлов
+
+Шаблон табов находится wp-content/plugins/woocommerce/templates/single-product/tabs/tabs.php
+В нашей папке single-product создаем папку tabs И копируем туда tabs.php
+
+За таб "Детали" отвечает шаблон single-product/product-attributes.php
+Чтобы табличка была красиво оформлена достаточно добавить туда бутстраповские классы table table-bordered
+
+

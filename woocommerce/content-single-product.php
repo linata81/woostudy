@@ -1,3 +1,4 @@
+<!-- шаблон карточки товара -->
 <?php
 defined( 'ABSPATH' ) || exit;
 
@@ -96,6 +97,23 @@ global $product;
 		
 	</div><!-- ./row -->
 	
+	<div class="row product-additional">
+    <div class="col">
+			<div class="bg-light p-30">
+			<?php
+			/**
+			 * Hook: woocommerce_after_single_product_summary.
+			 *
+			 * @hooked woocommerce_output_product_data_tabs - 10
+			 * @hooked woocommerce_upsell_display - 15
+			 * @hooked woocommerce_output_related_products - 20
+			 */
+			do_action( 'woocommerce_after_single_product_summary' );
+			?>
+			</div>
+		</div>		
+	</div><!-- ./row product-additional -->
+	
 </div>
 
 
@@ -129,16 +147,7 @@ return;
 		?>
 	</div>
 
-	<?php
-	/**
-	 * Hook: woocommerce_after_single_product_summary.
-	 *
-	 * @hooked woocommerce_output_product_data_tabs - 10
-	 * @hooked woocommerce_upsell_display - 15
-	 * @hooked woocommerce_output_related_products - 20
-	 */
-	do_action( 'woocommerce_after_single_product_summary' );
-	?>
+
 
 
 <?php do_action( 'woocommerce_after_single_product' ); ?>
