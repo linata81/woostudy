@@ -16,7 +16,17 @@ global $product;
 
 	<?php
 	do_action( 'woocommerce_before_add_to_cart_quantity' );
+	?>
 
+		<div class="d-flex align-items-center mb-4 pt-2">
+			<div class="input-group quantity mr-3" style="width: 130px;">
+				<div class="input-group-btn">
+					<button class="btn btn-primary btn-minus">
+						<i class="fa fa-minus"></i>
+					</button>
+				</div><!--./input-group-btn-->
+
+	<?php
 	woocommerce_quantity_input(
 		array(
 			'min_value'   => apply_filters( 'woocommerce_quantity_input_min', $product->get_min_purchase_quantity(), $product ),
@@ -27,8 +37,19 @@ global $product;
 
 	do_action( 'woocommerce_after_add_to_cart_quantity' );
 	?>
+	
+		<div class="input-group-btn">
+			<button class="btn btn-primary btn-plus">
+				<i class="fa fa-plus"></i>
+			</button>
+		</div><!--./input-group-btn-->
+	</div>
 
-	<button type="submit" class="single_add_to_cart_button button alt"><?php echo esc_html( $product->single_add_to_cart_text() ); ?></button>
+		<button type="submit" class="single_add_to_cart_button button alt btn btn-primary px-3">
+			<i class="fa fa-shopping-cart mr-1"></i>
+			<?php echo esc_html( $product->single_add_to_cart_text() ); ?>
+		</button>
+	</div><!--./d-flex align-items-center mb-4 pt-2-->
 
 	<?php do_action( 'woocommerce_after_add_to_cart_button' ); ?>
 
