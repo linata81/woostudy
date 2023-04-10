@@ -73,6 +73,7 @@ span.price del {
   right: -50px;
   top: -27px;
 }
+
 @font-face {
   font-family: star;
   src: url(../fonts/star.eot);
@@ -83,11 +84,22 @@ span.price del {
   font-weight: 400;
   font-style: normal;
 }
+
+@font-face {
+  font-family: WooCommerce;
+  src: url(../fonts/WooCommerce.eot);
+  src: url(../fonts/WooCommerce.eot?#iefix) format("embedded-opentype"),
+    url(../fonts/WooCommerce.woff) format("woff"),
+    url(../fonts/WooCommerce.ttf) format("truetype"),
+    url(../fonts/WooCommerce.svg#WooCommerce) format("svg");
+  font-weight: 400;
+  font-style: normal;
+}
+
 .products .product .star-rating {
   font-size: 0.857em;
 }
 .woocommerce .star-rating {
-  float: right;
   overflow: hidden;
   position: relative;
   height: 1em;
@@ -151,6 +163,42 @@ span.price del {
   margin: 0 auto 0.5407911001em;
 }
 /* Star rating */
+
+.woocommerce p.stars a {
+  position: relative;
+  height: 1em;
+  width: 1em;
+  text-indent: -999em;
+  display: inline-block;
+  text-decoration: none;
+}
+.woocommerce p.stars a::before {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1em;
+  height: 1em;
+  line-height: 1;
+  font-family: WooCommerce;
+  content: "\e021";
+  text-indent: 0;
+}
+.woocommerce p.stars a:hover ~ a::before {
+  content: "\e021";
+}
+.woocommerce p.stars:hover a::before {
+  content: "\e020";
+}
+.woocommerce p.stars.selected a.active::before {
+  content: "\e020";
+}
+.woocommerce p.stars.selected a.active ~ a::before {
+  content: "\e021";
+}
+.woocommerce p.stars.selected a:not(.active)::before {
+  content: "\e020";
+}
 
 .mini-cart-cnt {
   padding-bottom: 2px;
@@ -342,4 +390,50 @@ table.variations td {
   color: #fff;
   background-color: #dc3545;
   padding: 1rem;
+}
+
+.commentlist {
+  list-style: none;
+  padding-left: 0;
+}
+
+.commentlist .comment_container {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.commentlist .comment_container .avatar {
+  margin-right: 1rem;
+  max-width: 100%;
+  height: auto;
+  width: 45px;
+}
+
+.commentlist .comment-text .woocommerce-review__published-date {
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+.form-submit .submit {
+  background-color: #ffcb0d;
+  padding: 0.375rem 0.75rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0;
+  border: 1px solid transparent;
+}
+
+.comment-form-cookies-consent {
+  position: relative;
+  display: block;
+  padding-left: 1.25rem;
+}
+
+.comment-form-cookies-consent input {
+  position: absolute;
+  margin-top: 0.3rem;
+  margin-left: -1.25rem;
 }
