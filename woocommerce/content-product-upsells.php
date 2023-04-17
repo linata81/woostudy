@@ -23,15 +23,10 @@ global $product;
 if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
-
-//условные функции wc
-// https://woocommerce.com/document/conditional-tags/
-
-$product_class = (is_front_page() || is_product()) ? 'col-lg-3 col-md-4 col-sm-6 pb-1' : 'col-lg-4 col-md-6 col-sm-6 pb-1';
-
 ?>
+
 <!-- переписываем на div и первым аргументом добавляем свои классы -->
-<div <?php wc_product_class( $product_class, $product ); ?>>
+<div <?php wc_product_class( '', $product ); ?>>
 	<div class="product-item bg-light mb-4">
 	<?php
 	/**

@@ -64,3 +64,6 @@ remove_action('woocommerce_before_single_product_summary', 'woocommerce_show_pro
 
 //Отключаем вывод связаных товаров в карточке товара
 remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
+
+//Отключаем вывод связаных товаров(апсейлов) в карточке товара внутри табов
+remove_action('woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15);
